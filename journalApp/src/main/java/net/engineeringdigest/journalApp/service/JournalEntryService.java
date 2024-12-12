@@ -16,10 +16,7 @@ import java.util.Optional;
 
 @Component
 public class JournalEntryService {
-
     private static final Logger LOGGER= LoggerFactory.getLogger(JournalEntryService.class);
-
-
     @Autowired
     private JournalEntryRepository repository;
     @Autowired
@@ -33,19 +30,15 @@ public class JournalEntryService {
         user.getJournalEntries().add(saved);
         userService.saveUser(user);
     }
-
     public void saveEntry(JournalEntry journalEntity) {
         repository.save(journalEntity);
     }
-
     public List<JournalEntry> getAll() {
         return repository.findAll();
     }
-
     public Optional<JournalEntry> findById(ObjectId id) {
         return repository.findById(id);
     }
-
     @Transactional
     public void deleteById(ObjectId id, String userName) {
         try {
@@ -59,7 +52,5 @@ public class JournalEntryService {
             throw new RuntimeException("An Error occured while deleting the entry");
 
         }
-
-
     }
 }

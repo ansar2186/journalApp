@@ -19,6 +19,13 @@ server:
     context-path: /journal
 
 
+weather:
+  api:
+    key: 6dfb7c0707f2c7c0b9b48627b948b156
+
+
+
+
 
 
 
