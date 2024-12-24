@@ -24,6 +24,7 @@ public class UserController {
     private UserRepository userRepository;
     @Autowired
     private WeatherService weatherService;
+
     //private static final PasswordEncoder PASSWORD_ENCODER= new BCryptPasswordEncoder();
 
     @GetMapping
@@ -62,7 +63,7 @@ public class UserController {
     @GetMapping("/greet")
     public ResponseEntity<?> greeting(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        WeatherResponse weatherResponse = weatherService.getWeather("Delhi");
+        WeatherResponse weatherResponse = weatherService.getWeather("Mumbai");
         String greeting = "";
         if (weatherResponse != null) {
             greeting = ", Weather feels like " + weatherResponse.getCurrent().getFeelslike();

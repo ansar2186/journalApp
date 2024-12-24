@@ -13,11 +13,28 @@ spring:
       uri: mongodb+srv://humzaansari53:Ansar%402186@cluster0.0kcpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
       database: journaldb
       auto-index-creation: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ansar.ansari2823@gmail.com
+    password: pufo gnfp tecm nnvg
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
+
 server:
-  port: 8081
+  port: 8082
   servlet:
     context-path: /journal
 
+weather:
+  api:
+    key: 6dfb7c0707f2c7c0b9b48627b948b156
 
 
 
